@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro Contable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginContainer" class="container">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <label for="loginUsername">Usuario:</label>
+            <input type="text" id="loginUsername" required>
+            
+            <label for="loginPassword">Contraseña:</label>
+            <input type="password" id="loginPassword" required>
+            
+            <button type="submit">Ingresar</button>
+            <button type="button" id="showRegisterBtn">Registrarse</button>
+        </form>
+    </div>
+    
+    <div id="registerContainer" class="container hidden">
+        <h1>Registro</h1>
+        <form id="registerForm">
+            <label for="registerUsername">Usuario:</label>
+            <input type="text" id="registerUsername" required>
+            
+            <label for="registerPassword">Contraseña:</label>
+            <input type="password" id="registerPassword" required>
+            
+            <button type="submit">Registrarse</button>
+            <button type="button" id="showLoginBtn">Volver a Iniciar Sesión</button>
+        </form>
+    </div>
+    
+    <div id="contentContainer" class="container hidden">
+        <h1>Libro Contable</h1>
+        <form id="entryForm">
+            <label for="date">Fecha:</label>
+            <input type="date" id="date" required>
+            
+            <label for="description">Descripción:</label>
+            <input type="text" id="description" required>
+            
+            <label for="amount">Monto:</label>
+            <input type="number" step="0.01" id="amount" required>
+            
+            <label for="category">Categoría:</label>
+            <select id="category" required>
+                <option value="compra">Compra</option>
+                <option value="venta">Venta</option>
+            </select>
+            
+            <button type="submit">Añadir Entrada</button>
+        </form>
+        
+        <h2>Entradas Contables</h2>
+        <ul id="entryList"></ul>
+        
+        <button id="downloadBtn">Descargar Libro Contable</button>
+    </div>
+    
+    <!-- Incluyendo la biblioteca xlsx -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
